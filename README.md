@@ -2,7 +2,7 @@
 
 An elegant and powerful web application designed to streamline program and application management. Built with CodeIgniter 4, this system provides a robust platform for administrators, users, and stakeholders to manage the entire application lifecycle, from submission to reporting.
 
-(screenshot)
+![Preview](./screenshots/hero.png)
 
 ## ✨ Features
 

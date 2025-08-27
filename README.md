@@ -1,70 +1,106 @@
-# CodeIgniter 4 Application Starter
+# Program Management System
 
-## What is CodeIgniter?
+An elegant and powerful web application designed to streamline program and application management. Built with CodeIgniter 4, this system provides a robust platform for administrators, users, and stakeholders to manage the entire application lifecycle, from submission to reporting.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+(screenshot)
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## ✨ Features
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+This system is packed with features to make program management a breeze:
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+*   **👤 User Management:**
+    *   Secure user authentication and registration.
+    *   User-friendly dashboard for managing user accounts.
+    *   Role-based access control to ensure users only see what they need to.
 
-## Installation & updates
+*   **📄 Application Management:**
+    *   Intuitive interface for submitting new applications.
+    *   Comprehensive view of all applications with their current status.
+    *   Detailed view of each application with all its information.
+    *   Ability to update and manage application data.
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+*   **📊 Reporting:**
+    *   Generate insightful reports on application data.
+    *   Export reports for further analysis and decision-making.
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+*   **🏛️ Faculty Management:**
+    *   Manage faculty information within the system.
 
-## Setup
+*   **🚀 Modern Tech Stack:**
+    *   Built on the robust and speedy CodeIgniter 4 framework.
+    *   Utilizes modern PHP 8.1 features.
+    *   Interactive and responsive user interface.
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+## 🛠️ Tech Stack
 
-## Important Change with index.php
+*   **Framework:** CodeIgniter 4
+*   **Backend:** PHP 8.1
+*   **Frontend:** HTML, CSS, JavaScript
+*   **Database:** MySQL (or other supported by CodeIgniter)
+*   **Dependencies:**
+    *   `codeigniter4/shield`: For authentication
+    *   `enyo/dropzone`: For file uploads
+    *   `irsyadulibad/codeigniter4-datatables`: For interactive tables
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## 🚀 Getting Started
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+Follow these instructions to get the project up and running on your local machine.
 
-**Please** read the user guide for a better explanation of how CI4 works!
+### Prerequisites
 
-## Repository Management
+*   PHP 8.1 or higher
+*   Composer
+*   A web server (like Apache or Nginx)
+*   A database server (like MySQL)
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+### Installation
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/program-management-system.git
+    cd program-management-system
+    ```
 
-## Server Requirements
+2.  **Install dependencies:**
+    ```bash
+    composer install
+    ```
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+3.  **Configure your environment:**
+    *   Rename `env` to `.env`.
+    *   Edit the `.env` file and set the following:
+        ```
+        CI_ENVIRONMENT = development
+        app.baseURL = 'http://localhost:8080' // or your preferred local URL
+        database.default.hostname = localhost
+        database.default.database = your_database_name
+        database.default.username = your_database_username
+        database.default.password = your_database_password
+        database.default.DBDriver = MySQLi
+        ```
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+4.  **Run database migrations:**
+    ```bash
+    php spark migrate
+    ```
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+5.  **Seed the database (optional):**
+    ```bash
+    php spark db:seed PermohonanSeeder
+    ```
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+### Running the Application
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-"# program-management-system" 
-# program-management-system
+You can run the application using CodeIgniter's built-in server:
+
+```bash
+php spark serve
+```
+
+The application will be available at `http://localhost:8080`.
+
+Alternatively, you can configure a virtual host on your web server to point to the `public` directory of the project.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
